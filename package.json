@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "next": "^10.0.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "name": "blog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelomesquita/blog.git"
+  },
+  "author": "Marcelo Mesquita",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/marcelomesquita/blog/issues"
+  },
+  "homepage": "https://github.com/marcelomesquita/blog#readme"
+}
