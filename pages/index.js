@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
+const delay = (milliSeconds) => new Promise(resolve => setTimeout(resolve, milliSeconds));
+
 function Home(props) {
+	console.log('processando página Home');
+
 	const now = new Date();
 	const dynamicDate = now.toISOString();
 
@@ -16,14 +20,19 @@ function Home(props) {
 	)
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
+	console.log('processando getStaticProps Home');
+
+	// await delay(5000);
+
 	const now = new Date();
 	const staticDate = now.toISOString();
 
 	return {
 		props: {
 			staticDate
-		}
+		},
+		revalidate: 5
 	}
 }
 
