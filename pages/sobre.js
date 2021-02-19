@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
-function Home(props) {
+function Sobre(props) {
 	const now = new Date();
 	const dynamicDate = now.toISOString();
 
 	return (
 		<div>
-			<h1>Home</h1>
+			<h1>Sobre</h1>
 			<ul>
 				<li><Link href="/"><a>Home</a></Link></li>
 				<li><Link href="/sobre"><a>Sobre</a></Link></li>
@@ -27,4 +27,4 @@ export function getStaticProps() {
 	}
 }
 
-export default Home;
+export default Sobre;
