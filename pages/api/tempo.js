@@ -7,6 +7,8 @@ async function tempo(request, response) {
 	const currentWeatherResponse = await fetch(currentWeatherRoute);
 	const currentWeatherResponseJson = await currentWeatherResponse.json();
 
+	response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
+
 	response.json({
 		dynamicDate,
 		weather: currentWeatherResponseJson
