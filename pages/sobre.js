@@ -2,6 +2,22 @@ import Link from 'next/link';
 
 const delay = (milliSeconds) => new Promise(resolve => setTimeout(resolve, milliSeconds));
 
+export async function getStaticProps() {
+	console.log('processando getStaticProps Sobre');
+
+	// await delay(5000);
+
+	const now = new Date();
+	const staticDate = now.toISOString();
+
+	return {
+		props: {
+			staticDate
+		},
+		revalidate: 5
+	}
+}
+
 function Sobre(props) {
 	console.log('processando página Sobre');
 
@@ -18,22 +34,6 @@ function Sobre(props) {
 			<small>{dynamicDate} builded {props.staticDate}</small>
 		</div>
 	)
-}
-
-export async function getStaticProps() {
-	console.log('processando getStaticProps Sobre');
-
-	// await delay(5000);
-
-	const now = new Date();
-	const staticDate = now.toISOString();
-
-	return {
-		props: {
-			staticDate
-		},
-		revalidate: 5
-	}
 }
 
 export default Sobre;
